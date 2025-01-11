@@ -11,7 +11,7 @@ Makefile은 자동화된 빌드 시스템인 make 프로그램을 사용하여 �
 
 
 ### Part 1 - Libc functions
-● isalpha
+● isalpha\n
 문자가 알파벳(A-Z, a-z)인지 확인하는 함수입니다.
 문자가 알파벳이면 true(0이 아닌 값), 아니면 false(0)을 반환합니다.
 
