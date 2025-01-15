@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byeolee <byeolee@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 14:50:11 by byeolee           #+#    #+#             */
-/*   Updated: 2025/01/15 14:01:45 by byeolee          ###   ########.fr       */
+/*   Created: 2025/01/14 16:36:01 by byeolee           #+#    #+#             */
+/*   Updated: 2025/01/15 15:20:54 by byeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	void	*ptr;
+	t_list	*lst2;
+	t_list	*temp;
 
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
+	if (lst == NULL)
 		return (NULL);
-	ft_memset(ptr, 0, nmemb * size);
-	return (ptr);
+	lst2 = NULL;
+	while (lst != NULL)
+	{
+		temp = (t_list *)malloc(sizeof(t_list));
+		temp->content = f(lst->content);
+		if (temp == NULL)
+		{
+			del(temp -> content);
+			free(temp);
+			return (NULL);
+		}
+		ft_lstadd_back(&lst2, temp);
+		temp->next = NULL;
+		lst = lst->next;
+	}
+	return (lst2);
 }

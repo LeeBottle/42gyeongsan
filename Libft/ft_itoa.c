@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	txt_input(char *str, int n, int len, int check)
+static void	input_char(char *str, int n, int len, int check)
 {
 	if (!str)
 		return ;
@@ -30,7 +30,7 @@ void	txt_input(char *str, int n, int len, int check)
 	}
 }
 
-char	*input_zero(void)
+static char	*input_zero(void)
 {
 	char	*str;
 
@@ -40,7 +40,7 @@ char	*input_zero(void)
 	return (str);
 }
 
-char	*input_underflow(void)
+static char	*input_underflow(void)
 {
 	char	*str;
 
@@ -85,6 +85,6 @@ char	*ft_itoa(int n)
 		len++;
 	}
 	ptr = (char *)malloc(sizeof(char) * (len + mi_pl + 1));
-	txt_input(ptr, n, len, mi_pl);
+	input_char(ptr, n, len, mi_pl);
 	return (ptr);
 }

@@ -6,13 +6,13 @@
 /*   By: byeolee <byeolee@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:43:30 by byeolee           #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:12 by byeolee          ###   ########.fr       */
+/*   Updated: 2025/01/15 15:44:12 by byeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_init(char c, char const *set)
+static int	check_init(char c, char const *set)
 {
 	int	i;
 

@@ -6,16 +6,18 @@
 /*   By: byeolee <byeolee@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 14:59:31 by byeolee           #+#    #+#             */
-/*   Updated: 2025/01/09 14:05:05 by byeolee          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:18:59 by byeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
-	while (str[len] != '\0')
+	while (s[len] != '\0')
 		len++;
 	return (len);
 }

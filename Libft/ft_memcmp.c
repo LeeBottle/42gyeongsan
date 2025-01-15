@@ -6,22 +6,22 @@
 /*   By: byeolee <byeolee@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:45:41 by byeolee           #+#    #+#             */
-/*   Updated: 2025/01/09 13:39:11 by byeolee          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:45:14 by byeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(void *destination, const void *source, size_t num)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t				cnt;
 	unsigned char		*dest;
 	const unsigned char	*src;
 
 	cnt = 0;
-	dest = (unsigned char *)destination;
-	src = (const unsigned char *)source;
-	while (cnt != num)
+	dest = (unsigned char *)s1;
+	src = (const unsigned char *)s2;
+	while (cnt != n)
 	{
 		if (dest[cnt] != src[cnt])
 			return (dest[cnt] - src[cnt]);

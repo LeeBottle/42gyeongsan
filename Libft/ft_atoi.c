@@ -6,13 +6,13 @@
 /*   By: byeolee <byeolee@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:31:38 by byeolee           #+#    #+#             */
-/*   Updated: 2025/01/09 13:35:05 by byeolee          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:48:11 by byeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(char *nptr)
 {
 	int	len;
 	int	num;
@@ -21,18 +21,18 @@ int	ft_atoi(char *str)
 	len = 0;
 	num = 0;
 	mi_pl = 1;
-	while (str[len] == 32 || (str[len] >= 9 && str[len] <= 13))
+	while (nptr[len] == 32 || (nptr[len] >= 9 && nptr[len] <= 13))
 		len++;
-	if (str[len] == 45)
+	if (nptr[len] == 45)
 	{
 		mi_pl = -1;
 		len++;
 	}
-	else if (str[len] == 43)
+	else if (nptr[len] == 43)
 		len++;
-	while (str[len] >= 48 && str[len] <= 57)
+	while (nptr[len] >= 48 && nptr[len] <= 57)
 	{
-		num = num * 10 + str[len] - 48;
+		num = num * 10 + nptr[len] - 48;
 		len++;
 	}
 	return (num * mi_pl);

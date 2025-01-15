@@ -6,20 +6,20 @@
 /*   By: byeolee <byeolee@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 15:36:21 by byeolee           #+#    #+#             */
-/*   Updated: 2025/01/10 15:48:53 by byeolee          ###   ########.fr       */
+/*   Updated: 2025/01/15 15:43:36 by byeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	str_in_charset(char *str, char c)
+static int	str_in_charset(char *str, char c)
 {
 	if (*str == c)
 		return (1);
 	return (0);
 }
 
-int	txt_size(char *str, char c)
+static int	txt_size(char *str, char c)
 {
 	int	count;
 
@@ -37,7 +37,7 @@ int	txt_size(char *str, char c)
 	return (count);
 }
 
-void	txt_len(char *str, char c, char **arr, int size)
+static void	txt_len(char *str, char c, char **arr, int size)
 {
 	int	arr_loc;
 	int	arr_size;
@@ -65,7 +65,7 @@ void	txt_len(char *str, char c, char **arr, int size)
 	arr[arr_loc] = NULL;
 }
 
-void	txt_input(char *str, char c, char **arr, int size)
+static void	txt_input(char *str, char c, char **arr, int size)
 {
 	int	arr_1st_di;
 	int	arr_2nd_di;
