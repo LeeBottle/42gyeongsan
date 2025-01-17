@@ -64,12 +64,11 @@ char	*ft_itoa(int n)
 {
 	int				len;
 	int				mi_pl;
-	long long int	i;
+	int				i;
 	char			*ptr;
 
 	len = 0;
 	mi_pl = 0;
-	i = 1;
 	if (n == 0)
 		return (input_zero());
 	else if (n == -2147483648)
@@ -79,9 +78,10 @@ char	*ft_itoa(int n)
 		n = -n;
 		mi_pl = 1;
 	}
-	while ((n / i) >= 1)
+	i = n;
+	while (i > 0)
 	{
-		i *= 10;
+		i /= 10;
 		len++;
 	}
 	ptr = (char *)malloc(sizeof(char) * (len + mi_pl + 1));
