@@ -1,5 +1,5 @@
 NAME = libft.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = ft_isalpha.c\
     ft_isdigit.c\
@@ -47,24 +47,23 @@ SRCS_B = ft_lstnew.c\
 
 OBJS = $(SRCS:.c=.o) 
 OBJS_BONUS = $(SRCS_B:.c=.o)
-HEADER = includes
 
 ifdef WITH_BONUS
-	OBJECTS = $(OBJS) $(OBJS_BONUS)
+	OBJ_FILES = $(OBJS) $(OBJS_BONUS)
 else
-	OBJECTS = $(OBJS)
+	OBJ_FILES = $(OBJS)
 endif
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	ar -rsc $(NAME) $(OBJECTS)
+$(NAME): $(OBJ_FILES)
+	ar rcs $(NAME) $(OBJ_FILES)
 
-bonus:
-	@make WITH_BONUS=1 all
+bonus :
+	make WITH_BONUS=1 all
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS) $(OBJS_BONUS)

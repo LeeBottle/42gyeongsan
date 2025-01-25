@@ -6,7 +6,7 @@
 /*   By: byeolee <byeolee@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:45:40 by byeolee           #+#    #+#             */
-/*   Updated: 2025/01/09 13:37:44 by byeolee          ###   ########.fr       */
+/*   Updated: 2025/01/24 16:43:48 by byeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	cnt;
-	char	*ptr;
+	size_t			cnt;
+	unsigned char	*ptr;
 
-	ptr = (char *)s;
+	ptr = s;
 	cnt = 0;
 	while (cnt != n)
 	{
